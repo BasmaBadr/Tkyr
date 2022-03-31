@@ -7,18 +7,21 @@ import org.openqa.selenium.support.ui.Select;
 
 public class PageBase {
     WebDriver driver;
+    Select select;
     public PageBase(WebDriver driver){
         PageFactory.initElements(driver,this);
     }
 
-    protected static void clickButton(WebElement button){
+    public  void clickButton(WebElement button){
         button.click();
     }
-    protected static void setTextElmentText(WebElement textElment , String value){
+    public  void setTextElmentText(WebElement textElment , String value){
         textElment.sendKeys(value);
 
     }
-//    protected static void select( WebElement select){
-//        Select select = new Select(WebElement);
-//    }
+
+    public  void select( WebElement element , String name){
+         select = new Select(element);
+         select.selectByVisibleText(name);
+    }
 }

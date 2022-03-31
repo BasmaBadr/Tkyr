@@ -11,9 +11,10 @@ public class SignUp_Test extends TestBase{
     public void signUp(){
         signUp=new SignUp_Page(driver);
         signUp.clickSignUp();
+        signUp.addNameandPhone("Basma","01090000000");
         signUp.selectMonth();
         signUp.selectDay();
         signUp.selectYear();
+        signUp.clickNext();
     }
-
 }
